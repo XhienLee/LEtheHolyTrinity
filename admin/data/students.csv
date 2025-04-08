@@ -1,0 +1,6 @@
+id,name,email,course,enrollment_date,status
+1,"John Doe",john.doe@example.com,"Cybersecurity Basics",2024-01-15,Active
+2,"Jane Smith",jane.smith@example.com,"Network Security",2024-02-20,Active
+3,"Robert Johnson",robert.j@example.com,"Ethical Hacking",2023-11-10,Completed
+4,"Lisa Brown",lisa.brown@example.com,"Data Protection",2024-03-05,Active
+5,"Michael Chen",michael.c@example.com,Cryptography,2023-09-18,"On Hold"

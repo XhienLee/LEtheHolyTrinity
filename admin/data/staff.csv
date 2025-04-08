@@ -1,0 +1,5 @@
+id,name,email,position,department,join_date
+1,"David Thomas",david.t@example.com,Administrator,"IT Support",2021-03-15
+2,"Susan Miller",susan.m@example.com,"Academic Advisor","Student Services",2022-05-20
+3,"Kevin Wilson",kevin.w@example.com,"Technical Support","IT Support",2023-02-10
+4,"Amanda Johnson",amanda.j@example.com,"Program Coordinator",Administration,2021-11-05

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Sense Dashboard</title>
+    <link rel="stylesheet" href="manage.css">
+    <script src="manage.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="Cyber-Sense Logo" class="logo">
+                <h1>Cyber-Sense</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Report & Analysis</a></li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <div class="profile-circle">
+                    <img src="profile.png" alt="Profile" class="profile-image">
+                </div>
+            </div>
+        </header>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="students">Students</button>
+                <button class="tab-button" data-tab="instructors">Instructors</button>
+                <button class="tab-button" data-tab="staff">Staff</button>
+            </div>
+            
+            <div class="tab-content">
+                <div id="students" class="tab-pane active">
+                    <div class="search-container">
+                        <input type="text" id="studentSearch" placeholder="Search students...">
+                        <button id="studentSearchBtn">Search</button>
+                    </div>
+                    <div class="data-container" id="studentsData">
+                        <!-- Data will be loaded here via JavaScript -->
+                    </div>
+                </div>
+                
+                <div id="instructors" class="tab-pane">
+                    <div class="search-container">
+                        <input type="text" id="instructorSearch" placeholder="Search instructors...">
+                        <button id="instructorSearchBtn">Search</button>
+                    </div>
+                    <div class="data-container" id="instructorsData">
+                        <!-- Data will be loaded here via JavaScript -->
+                    </div>
+                </div>
+                
+                <div id="staff" class="tab-pane">
+                    <div class="search-container">
+                        <input type="text" id="staffSearch" placeholder="Search staff...">
+                        <button id="staffSearchBtn">Search</button>
+                    </div>
+                    <div class="data-container" id="staffData">
+                        <!-- Data will be loaded here via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading indicator -->
+    <div id="loader" class="loader">Loading...</div>
+</body>
+</html>
