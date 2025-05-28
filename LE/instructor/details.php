@@ -6,7 +6,7 @@
     requireLogin();
     $moduleId = isset($_GET['id']) ? $_GET['id'] : null;
     if (!$moduleId) {
-        header('Location: ../index.php');
+        header('Location: index.php');
         exit();
     }
     $studentId = $_SESSION['user_id'];
@@ -21,8 +21,8 @@
     $content_text = isset($courseDetails['content_text']) ? $courseDetails['content_text'] : '';
     $content_video_url = isset($courseDetails['content_video_url']) ? $courseDetails['content_video_url'] : '';
     $content_pdf_path = isset($courseDetails['content_pdf_path']) ? $courseDetails['content_pdf_path'] : '';
-    $success_message = '';
-    $error_message = '';
+    $success_message = isset($_GET['success_message']) ? htmlspecialchars($_GET['success_message']) : '';
+    $error_message = isset($_GET['error_message']) ? htmlspecialchars($_GET['error_message']) : '';
      if ($_POST) {
         if (isset($_POST['action']) && $_POST['action'] === 'update_module') {
             $pdfPath = $content_pdf_path;
@@ -102,6 +102,9 @@
                 <a href="../index.php">Home</a>
                 <a href="index.php">My Modules</a>
             </nav>
+            <span class="logout-container">
+                <a href="#" class="logout-link" onclick="showLogoutModal()">Logout</a>
+            </span>
         </header>
 
         <main class="content">

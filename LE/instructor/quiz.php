@@ -26,8 +26,12 @@ if ($_POST) {
                     $quizId = $result['quiz_id'];
                     $action = 'edit';
                     $quiz_data = getQuizById($quizId);
+                    header("Location: details.php?id={$moduleId}&success_message={$success_message}");
+                    exit;
                 } else {
                     $error_message = $result['message'];
+                    header("Location: details.php?id={$moduleId}&error_message={$error_message}");
+                    exit;
                 }
                 break;
             case 'update':
@@ -35,14 +39,15 @@ if ($_POST) {
                 if ($result['status']) {
                     $success_message = $result['message'];
                     $quiz_data = getQuizById($quizId);
+                    header("Location: details.php?id={$moduleId}&success_message={$success_message}");
                 } else {
                     $error_message = $result['message'];
+                    header("Location: details.php?id={$moduleId}&error_message={$error_message}");
+                    exit;
                 }
                 break;
         }
     }
-    
-    // Handle question actions
     if (isset($_POST['question_action']) && $quizId) {
         switch ($_POST['question_action']) {
             case 'add':
@@ -180,8 +185,6 @@ function addQuizQuestion($data, $quizId) {
     
     try {
         $questionId = generateQuestionId();
-        
-        // Create JSON for answer options
         $answerOptions = json_encode([
             'A' => $data['option_a'],
             'B' => $data['option_b'],
@@ -212,7 +215,6 @@ function updateQuizQuestion($data) {
     require '../functions/db_connect.php';
     
     try {
-        // Create JSON for answer options
         $answerOptions = json_encode([
             'A' => $data['option_a'],
             'B' => $data['option_b'],
@@ -291,7 +293,6 @@ function generateQuestionId() {
     return 'QN' . time() . rand(100, 999);
 }
 
-// Set page title based on action
 $page_title = '';
 switch ($action) {
     case 'create':
@@ -416,7 +417,7 @@ switch ($action) {
                             </div>
                             <div class="info-item">
                                 <strong>Passing Score:</strong>
-                                <?php echo htmlspecialchars($quiz_data['passing_score']); ?>%
+                                <?php echo htmlspecialchars($quiz_data['passing_score']); ?>
                             </div>
                         </div>
                     </div>
@@ -433,9 +434,7 @@ switch ($action) {
                         </div>
                     </form>
                 </div>
-
             <?php else: ?>
-                <!-- Quiz Details Form -->
                 <form method="POST" class="quiz-form">
                     <input type="hidden" name="quiz_action" value="<?php echo $action === 'edit' ? 'update' : 'create'; ?>">
                     
@@ -473,7 +472,7 @@ switch ($action) {
                     </div>
                     
                     <div class="form-group">
-                        <label for="passing_score"><strong>Passing Score (%):</strong></label>
+                        <label for="passing_score"><strong>Passing Score:</strong></label>
                         <input type="number" id="passing_score" name="passing_score" 
                                value="<?php echo htmlspecialchars($quiz_data['passing_score'] ?? ''); ?>" 
                                class="form-input" required min="0" max="100"

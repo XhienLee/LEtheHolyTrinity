@@ -1,4 +1,3 @@
-/* ===== GLOBAL STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +20,7 @@ body {
     min-height: 100vh;
 }
 
-/* ===== NAVIGATION STYLES ===== */
+
 .top-nav {
     display: flex;
     align-items: center;
@@ -87,7 +86,7 @@ body {
     border-radius: 1.5px;
 }
 
-/* ===== CONTENT AREA ===== */
+
 .content {
     padding: 30px;
 }
@@ -105,7 +104,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* ===== ALERT MESSAGES ===== */
+
 .alert {
     padding: 15px 20px;
     margin-bottom: 25px;
@@ -142,7 +141,7 @@ body {
     content: '⚠';
 }
 
-/* ===== TAB SYSTEM ===== */
+
 .tabs {
     display: flex;
     gap: 10px;
@@ -213,7 +212,7 @@ body {
     font-weight: 600;
 }
 
-/* ===== FORM STYLING ===== */
+
 .module-form {
     background-color: #f9f9f9;
     padding: 30px;
@@ -282,7 +281,6 @@ body {
     display: flex;
 }
 
-/* ===== BUTTON BASE STYLES ===== */
 .btn,
 .save-btn,
 .cancel-btn,
@@ -326,7 +324,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== BUTTON COLOR VARIATIONS ===== */
+
 .save-btn,
 .back-btn {
     background-color: rgb(138, 30, 30);
@@ -435,7 +433,7 @@ body {
     background-color: #c82333;
 }
 
-/* ===== SEARCH AND ENROLLMENT ===== */
+
 .enroll-section {
     max-width: 800px;
 }
@@ -503,7 +501,7 @@ body {
     min-width: 100px;
 }
 
-/* ===== PARTICIPANTS SECTION ===== */
+
 .participants-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -537,7 +535,6 @@ body {
     font-size: 14px;
 }
 
-/* ===== GRADE SECTION ===== */
 .grade-info {
     background-color: #f9f9f9;
     padding: 25px;
@@ -557,7 +554,7 @@ body {
     font-weight: 600;
 }
 
-/* ===== TABLES ===== */
+
 .student-table, table.grades-table {
     width: 100%;
     border-collapse: collapse;
@@ -598,7 +595,7 @@ table.grades-table tr:hover {
     color: #5a5a5a;
 }
 
-/* ===== GRADE INDICATORS ===== */
+
 .grade-indicator {
     display: inline-block;
     width: 40px;
@@ -617,7 +614,7 @@ table.grades-table tr:hover {
 .grade-d { background-color: #FF9800; }
 .grade-f { background-color: #F44336; }
 
-/* ===== MODAL ===== */
+
 .modal {
     display: none;
     position: fixed;
@@ -663,7 +660,7 @@ table.grades-table tr:hover {
     gap: 15px;
 }
 
-/* ===== MOBILE MENU ===== */
+
 .circle-menu {
     position: fixed;
     top: 23%;
@@ -749,7 +746,7 @@ table.grades-table tr:hover {
     transform: translateX(5px);
 }
 
-/* ===== ANIMATIONS ===== */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -766,7 +763,7 @@ table.grades-table tr:hover {
     }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+
 @media (max-width: 1024px) {
     .container {
         max-width: 100%;
@@ -1113,4 +1110,32 @@ table.grades-table tr:hover {
 }
 .toast.hidden {
   display: none;
+}
+
+.logout-container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.logout-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: rgb(216, 59, 59);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.logout-link:hover, .logout-link:focus {
+    background-color: rgb(138, 30, 30);
+    border-color: rgb(216, 59, 59);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logout-link:active {
+    transform: scale(0.98);
 }

@@ -202,7 +202,7 @@ header {
     }
 }
 
-/* Main Content */
+
 .main-content {
     padding: clamp(40px, 10vw, 80px) 0;
     background: rgba(255, 255, 255, 0.95);
@@ -277,7 +277,7 @@ header {
     font-size: 1.2em;
 }
 
-/* Login Modal */
+
 .login-overlay {
     position: fixed;
     top: 0;
@@ -458,7 +458,7 @@ header {
     font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
-/* Footer */
+
 footer {
     background: linear-gradient(135deg, var(--dark), #1e293b);
     color: var(--light);
@@ -835,7 +835,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Scrollbar styling */
 .privacy-content::-webkit-scrollbar {
     width: 8px;
 }

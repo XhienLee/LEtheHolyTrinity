@@ -15,7 +15,7 @@
     $courses = [];
     foreach($allCourse as $filtered){
         $courseInfo = getCourseById($filtered['moduleId']);
-        if($courseInfo['status'] == 'active'){
+        if(@$courseInfo['status'] == 'active'){
             $courses[] = $filtered;
         }
     }

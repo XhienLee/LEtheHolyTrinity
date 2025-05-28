@@ -15,7 +15,7 @@ function isLoggedIn() {
 }
 function requireLogin($default_redirect = 'index.php') {
     if (!isLoggedIn()) {
-        header("Location: $default_redirect");
+        header("Location: ../$default_redirect");
         exit();
     }    
     $user_type = $_SESSION['user_type'] ?? null;    
